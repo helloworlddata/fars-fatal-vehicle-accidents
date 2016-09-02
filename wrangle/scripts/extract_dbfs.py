@@ -33,8 +33,7 @@ if __name__ == '__main__':
         # extract the filename starting from the year subdirectory
         # e.g 1987/DBF/FARS1987.zip
         #   from wrangle/corral/fetched/fars/1987/DBF/FARS1987.zip
-        destsubdir = Path(re.search('\d{4}/.+', fstrpath).group())
-
+        destsubdir = destpath / re.search('\d{4}/.+', fstrpath).group()
         LOGGY.info("Unzipping: %s" % fstrpath)
         with ZipFile(fstrpath) as zfile:
             for af in zfile.filelist:

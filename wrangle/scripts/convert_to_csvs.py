@@ -16,7 +16,7 @@ LOGGY = loggy('extract_csvs')
 
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser("This does something")
+    parser = argparse.ArgumentParser("Converts DBF files found in `srcdir` into CSVs, saved into `destdir`")
     parser.add_argument('srcdir', type=str, help="a directory in which DBF files are found")
     parser.add_argument('destdir', type=str, help="a directory to which CSV files are extracted")
     args = parser.parse_args()

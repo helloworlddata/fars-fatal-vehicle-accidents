@@ -1,0 +1,184 @@
+- canonical_name: accident
+  readable_name: accident
+  file_pattern: '\bacc(?:ident|\d{4})'
+  filename_examples:
+    - 1975/DBF/FARS1975.zip/ACCIDENT.dbf
+    - 1993/DBF/FARS1993.zip/acc1993.dbf
+  start_year: 1975
+  description: |
+    This data file contains information about crash characteristics and environmental conditions at the time of the crash. There is one record per crash.
+
+- canonical_name: person
+  readable_name: person
+  file_pattern: '(?<!mi)per(?:son|\d{2,4})?'
+  filename_examples:
+    - 1997/DBF/FARSDBF97.zip/PERSON.dbf
+    - 1985/DBF/FARS1985.zip/per1985.dbf
+    - 2015/Puerto Rico/FARS2015PuertoRicoDBF.zip/person.dbf
+  start_year: 1975
+  description: |
+    This data file contains information describing all persons involved in the crash including motorists (i.e., drivers and passengers of in-transport motor vehicles) and non-motorists (e.g., pedestrians and pedalcyclists). It provides information such as age, sex, vehicle occupant restraint use, and injury severity. There is one record per person.
+
+
+- canonical_name: vehicle
+  readable_name: vehicle
+  file_pattern: 'veh(?:icle|\d{4})'
+  filename_examples:
+    - 1983/DBF/FARS1983.zip/veh1983.dbf
+    - 2012/National/DBF/FARS2012.zip/vehicle.dbf
+  start_year: 1975
+  description: |
+    This data file contains information describing the in-transport motor vehicles and the drivers of in-transport motor vehicle who are involved in the crash. There is one record per in-transport motor vehicle. Parked and working vehicle information is in the Parkwork data file.
+
+
+
+- canonical_name: alcohol-multiple-imputation-accident
+  file_pattern: miacc
+  filename_examples:
+    - 1997/DBF/FARSDBF97.zip/Miacc97.dbf
+    - 1998/DBF/FARSDBF98.zip/MIACC.dbf
+
+- canonical_name: alcohol-multiple-imputation-accident-driver
+  file_pattern: midrvacc
+  filename_examples:
+    - 2008/PR/DBF/PRMI2008DBF.zip/midrvacc.DBF
+
+- canonical_name: alcohol-multiple-imputation-accident-person
+  file_pattern: miper
+  filename_examples:
+    - 1997/DBF/FARSDBF97.zip/Miper97.dbf
+    - 1998/DBF/FARSDBF98.zip/MIPER.dbf
+
+
+
+- canonical_name: cevent
+  readable_name: crash_events
+  file_pattern: cevent
+  start_year: 2010
+  description: |
+    This data file contains information for all of the qualifying events (i.e., both harmful and non-harmful involving in-transport motor vehicles) which occurred in the crash. It details the chronological sequence of events resulting from an unstabilized situation that constitutes a motor vehicle traffic crash. There is one record per event. Included in each record is a description of the event or object contacted (e.g., ran off road-right, crossed center line, guardrail, parked motor vehicle), the vehicles involved, and the vehicles’ area of impact.
+
+
+- canonical_name: vevent
+  readable_name: vehicle_events
+  file_pattern: vevent
+  start_year: 2010
+  description: |
+    This data file contains the sequence of events for each in- transport motor vehicle involved in the crash. This data file has the same data elements as the Cevent data file. In addition, this data file has a data element that records the sequential event number for each vehicle (VEVENTNUM). There is one record for each event for each in-transport motor vehicle.
+
+- canonical_name: vsoe
+  readable_name: vehicle_events_simplified
+  file_pattern: vsoe
+  start_year: 2010
+  description: |
+    This data file contains the sequence of events for each in- transport motor vehicle involved in the crash. This data file has a subset of the data elements contained in the Vevent data file (It is a simplified Vevent data file). There is one record for each event for each in-transport motor vehicle.
+
+- canonical_name: damage
+  readable_name: vehicle_damage
+  file_pattern: damage
+  start_year: 2012
+  description: |
+    This data file contains information about all of the areas on this vehicle that were damaged in the crash. There is one record per damaged area.
+
+- canonical_name: distract
+  readable_name: driver_distractions
+  file_pattern: distract
+  start_year: 2010
+  description: |
+    This data file contains information about driver distractions. There is at least one record per in-transport motor vehicle. Each distraction is a separate record.
+
+- canonical_name: drimpair
+  readable_name: driver_impairments
+  file_pattern: drimpair
+  start_year: 2010
+  description: |
+    This data file contains information about physical impairments of drivers of motor vehicles. There is one record per impairment and there is at least one record for each driver of an in-transport motor vehicle.
+
+- canonical_name: factor
+  readable_name: vehicle_factors
+  file_pattern: factor
+  start_year: 2010
+  description: |
+    This data file contains information about vehicle circumstances which may have contributed to the crash. There is at least one record per in-transport motor vehicle. Each factor is a separate record.
+
+
+- canonical_name: violatn
+  readable_name: driver_violations
+  file_pattern: violatn
+  start_year: 2010
+  description: |
+    This data file contains information about violations which were charged to drivers. There is at least one record per in-transport motor vehicle. Each violation is a separate record.
+
+- canonical_name: vision
+  readable_name: driver_vision_obstructions
+  file_pattern: vision
+  start_year: 2010
+  description: |
+    This data file contains information about circumstances which may have obscured the driver’s vision. There is at least one record per in-transport motor vehicle. Each obstruction is a separate record.
+
+- canonical_name: maneuver
+  readable_name: driver_maneuvers
+  file_pattern: maneuver
+  start_year: 2010
+  description: |
+    This data file contains information about actions taken by the driver to avoid something or someone in the road. There is at least one record per in-transport motor vehicle. Each maneuver is a separate record.
+
+
+- canonical_name: nmimpair
+  file_pattern: nmimpair
+  readable_name: non_occupant_impairments
+  start_year: 2010
+  description: |
+    This data file contains information about physical impairments of people who are not occupants of motor vehicles. There is one record per impairment and there is at least one record for each person who is not an occupant of a motor vehicle.
+
+- canonical_name: nmcrash
+  readable_name: non_occupant_circumstances
+  file_pattern: nmcrash
+  start_year: 2010
+  description: |
+    This data file contains information about any contributing circumstances or improper actions of people who are not occupants of motor vehicles (e.g., pedestrians and bicyclists) noted on the PAR. There is one record per action and there is at least one record for each person who is not an occupant of a motor vehicle.
+
+- canonical_name: nmprior
+  file_pattern: nmprior
+  readable_name: non_occupant_actions
+  start_year: 2010
+  description: |
+    This data file contains information about the actions of people who are not occupants of motor vehicles (e.g., pedestrians and bicyclists) at the time of their involvement in the crash. There is one record per action and there is at least one record for each person who is not an occupant of a motor vehicle.
+
+- canonical_name: safetyeq
+  readable_name: non_occupant_safety_equipment
+  file_pattern: safetyeq
+  start_year: 2010
+  description: |
+   This data set contains information about safety equipment used by people who are not occupants of motor vehicles. There is one record per equipment item, and there is at least one record for each person who is not an occupant of a motor vehicle.
+
+- canonical_name: parkwork
+  readable_name: parked_and_working_vehicles
+  file_pattern: parkwork
+  start_year: 2010
+  description: |
+    This data set contains information about parked and working vehicles that were involved in FARS crashes. A parked vehicle is a motor vehicle which is stopped off the roadway. A working vehicle is used to indicate that this is a motor vehicle that was in the act of performing highway construction, maintenance or utility work related to the trafficway when it became an involved in the crash.
+
+    Data users are strongly advised to consult the annual FARS Coding and Editing Manuals for a detailed description.
+
+- canonical_name: pbtype
+  readable_name: pedestrian_and_bicycle_crashes
+  file_pattern: pbtype
+  start_year: 2014
+  description: |
+    This data file contains information about crashes between motor vehicles and pedestrians, people on personal conveyances and bicyclists. Data from the crash are enter into the Pedestrian and Bicycle Crash Analysis Tool (PBCAT). The output fields from PBCAT, including the pre-crash actions of the parties involved (crash type), are included in this data set. There is one record for each pedestrian, bicyclist or person on a personal conveyance.
+
+- canonical_name: vehnit
+  readable_name: parked_and_working_vehicles
+  file_pattern: vehnit
+  start_year: 2005
+  final_year: 2009
+  description: |
+    This data file contains information about parked and working vehicles that were involved in FARS crashes. Prior to the Vehnit creation, the vehicles Not-In-Transport were not included in the FARS data. This data file had the same list of data elements and SAS structure as the Vehicle data file where the UNITTYPE of the vehicle is 2, 3, or 4. The vehicle data file will have the vehicles in-transport where the UNITYPE of the vehicle is 1. Beginning in 2010, FARS discontinued the Vehnit data file and introduced the Parkwork data file. There is one record per parked/working vehicle. This data file was replaced in 2010 with the Parkwork data file. See the Parkwork data file in the Data Element Definitions and Codes section for the element history of this data file.
+
+- canonical_name: vindecode
+  readable_name: vehicle_descriptors
+  file_pattern: vindecode
+  start_year: 2013
+  description: |
+    This data file contains vehicle descriptors for all vehicles, mainly passenger vehicles, trucks and motorcycles, based on the vehicle’s VIN which is decoded using the VINtelligence program. There is one record per vehicle.

@@ -18,15 +18,36 @@ def dbf_to_dict(filepath):
     return list(DBF(str(filepath)))
 
 
+
+
+
+
 def derive_file_meta(filepath):
     """
     filepath: str or Path; name of file (presumably, a DBF),
-        e.g. 1975/DBF/FARS1975.zip
-        or   1992/Auxiliary_FARS_Files/Auxiliary_FARS_DBF_1992.ZIP
-        or   2015/Puerto\ Rico/FARS2015PuertoRicoDBF.zip
+        e.g. /tmp/farsdbfs/1975/DBF/FARS1975.zip/PERSON.dbf
+        or   /tmp/farsdbfs/2000/Auxiliary_FARS_Files/Auxiliary_PR_DBF_2000.ZIP/RICO/RICO/VEH_AUX.dbf
 
-    Returns: dict; e.g. {'year': 1992, 'region': 'national'}
-                        {'year': 2015, 'region': 'puerto-rico'}
+    Returns: dict;
+        e.g.
+
+        /tmp/farsdbfs/1975/DBF/FARS1975.zip/PERSON.dbf
+        {'year': 1975, 'type': 'person', 'scope': 'main', 'region': 'national',
+         'subtype': None}
+
+
+        /tmp/farsdbfs/2000/Auxiliary_FARS_Files/Auxiliary_PR_DBF_2000.ZIP/RICO/RICO/VEH_AUX.dbf
+        {'year': 2000, 'type': 'vehicle',  'scope': 'auxiliary', 'region': 'puerto-rico',
+         'subtype': None}
+
+        /tmp/farsdbfs/2012/National/DBF/FARS2012.zip/miacc.dbf
+        {'year': 2012, 'type': 'accident',  'scope': 'main', 'region': 'national',
+         'subtype': 'alcohol-multiple-imputation'}
+
+        /tmp/farsdbfs/2012/Puerto Rico/PuertoRico2012DBF.zip/midrvacc.dbf
+        {'year': 2012, 'type': 'driver-accident',  'scope': 'main', 'region': 'puerto-rico',
+         'subtype': 'alcohol-multiple-imputation'}
+
     """
     pathstr = str(filepath)
     pathparts = Path(filepath).parts
