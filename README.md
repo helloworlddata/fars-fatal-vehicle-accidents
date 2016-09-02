@@ -1,22 +1,16 @@
 # FARS data
 
 
-Homepage
+Homepage http://www.nhtsa.gov/FARS
 
-http://www.nhtsa.gov/FARS
-
-Documentation listing
-
-https://crashstats.nhtsa.dot.gov/#/DocumentTypeList/4
+Documentation listing https://crashstats.nhtsa.dot.gov/#/DocumentTypeList/4
 
 
 FTP: ftp://ftp.nhtsa.dot.gov/fars/
 
-1975: ftp://ftp.nhtsa.dot.gov/fars/1975/
 
+# Working with a mirror
 
-2011: ftp://ftp.nhtsa.dot.gov/fars/2011/SAS/
+The FARS data is scattered across the [NHTSA FTP server](ftp://ftp.nhtsa.dot.gov/fars/). Rather than write a script just to walk the directory structure, I just ran __wget__ on it, and made a separate repo which contains more or less an exact mirror of [ftp.nhtsa.dot.gov/fars](ftp://ftp.nhtsa.dot.gov/fars/).
 
-    FSAS2011.zip  13.5 MB 11/12/13, 3:47:00 PM
-    MI2011.zip  652 kB  11/12/13, 3:38:00 PM
-
+This repo is part of my wgetsnaps organization: https://github.com/wgetsnaps/ftp.nhtsa.dot.gov--fars
